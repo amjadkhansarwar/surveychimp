@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import getSurveyById from '../../api/getSurveyById';
 import { ISurvey } from '@surveychimp/surveychimp-lib';
+import RatingComponent from '../components/RatingStar';
 
 const SurveyPage = () => {
     const { surveyId } = useParams();
@@ -21,6 +22,7 @@ const SurveyPage = () => {
     return (<>
         <h1>Survey</h1>
         <p>{survey?.recipient.name}</p>
+        <RatingComponent />
     </>)
 }
 

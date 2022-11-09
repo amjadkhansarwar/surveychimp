@@ -1,6 +1,7 @@
 
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
+import ThankYouPage from './pages/ThankYou';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -34,6 +35,10 @@ export function App() {
         <Route
           path="/survey/:surveyId"
           element={<SurveyPage />}
+        />
+        <Route
+          path="/thankYou"
+          element={<ThankYouPage />}
         />
         <Route
           path="/"
