@@ -4,8 +4,8 @@ import SurveyPage from './pages/SurveyPage';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { useEffect } from 'react';
-import healthCheck from '../api/healtcheck';
+//import { useEffect } from 'react';
+//import healthCheck from '../api/healtcheck';
 
 
 
@@ -15,7 +15,7 @@ const StyledApp = styled.div`
 
 
 export function App() {
-
+/*
   useEffect(() => { 
     const pageStatus = async () => {
       const res =  await healthCheck();
@@ -27,6 +27,7 @@ export function App() {
   }
     pageStatus();
     }, []);
+*/
   return (
     <StyledApp>
       <Routes>
