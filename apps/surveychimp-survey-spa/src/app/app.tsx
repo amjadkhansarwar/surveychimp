@@ -4,6 +4,9 @@ import SurveyPage from './pages/SurveyPage';
 
 import { Route, Routes } from 'react-router-dom';
 
+import { useEffect } from 'react';
+import healthCheck from '../api/healtcheck';
+
 
 
 const StyledApp = styled.div`
@@ -13,6 +16,17 @@ const StyledApp = styled.div`
 
 export function App() {
 
+  useEffect(() => { 
+    const pageStatus = async () => {
+      const res =  await healthCheck();
+    if(res && res.message) {
+      console.log(res.message);
+    }else{
+      console.log('Backed is not running');
+    }
+  }
+    pageStatus();
+    }, []);
   return (
     <StyledApp>
       <Routes>

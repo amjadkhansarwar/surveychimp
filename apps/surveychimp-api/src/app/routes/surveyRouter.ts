@@ -5,6 +5,8 @@ import { nextTick } from 'process';
 
 const router = Router();
 
+/////////// route for get all surveys ///////////
+
 router.get(
     '/survey/all',
     async (req, res, next) => {
@@ -79,5 +81,7 @@ router.patch('/survey/:surveyId',
 
 
 router.get('/api/todos', (req, res) => res.status(200).send());
+
+router.get('/api/healtcheck', (req, res) => res.status(200).send({ message: 'App is runnug on satuts 200' }));
 
 export default router;
