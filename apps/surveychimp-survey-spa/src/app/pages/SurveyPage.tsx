@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import getSurveyById from '../../api/getSurveyById';
 import { ISurvey } from '@surveychimp/surveychimp-lib';
 import RatingComponent from '../components/RatingStar';
+import RatingStar4 from '../components/RatingStar4'
+import console from 'console';
 
 const SurveyPage = () => {
     const { surveyId } = useParams();
@@ -22,7 +24,8 @@ const SurveyPage = () => {
     return (<>
         <h1>Survey</h1>
         <p>{survey?.recipient.name}</p>
-        <RatingComponent />
+        
+        {process.env.NX_RATING_STARS_FEATURE === 'false' ? <RatingComponent /> : <RatingStar4 />}
     </>)
 }
 
